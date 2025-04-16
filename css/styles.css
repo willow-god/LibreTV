@@ -15,6 +15,16 @@
     --card-hover-border: rgba(0, 204, 255, 0.5); /* 悬停边框颜色 */
 }
 
+.dark-bg-overlay {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://api.nsmao.net/api/bing/query?key=H8rt5Q4PtgP00XRGOPZAVR8Mmp&type=img');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
 .page-bg {
     background: linear-gradient(180deg, var(--page-gradient-start), var(--page-gradient-end));
     min-height: 100vh;
@@ -27,6 +37,7 @@
     background-blend-mode: normal;
     background-size: cover, 100px 100px, 50px 50px, 75px 75px;
 }
+
 
 button, .card-hover {
     transition: all 0.3s ease;

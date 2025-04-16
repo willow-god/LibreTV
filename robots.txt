@@ -1,6 +1,6 @@
 User-agent: *
-Allow: /
+DisAllow: /
 Disallow: /js/
 Disallow: /css/
 
-Sitemap: https://tv.qyliu.top/sitemap.xml
+Sitemap: https://tv.liu2003.eu.org/sitemap.xml
