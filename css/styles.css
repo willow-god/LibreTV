@@ -18,7 +18,7 @@
 .dark-bg-overlay {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('https://api.nsmao.net/api/bing/query?key=H8rt5Q4PtgP00XRGOPZAVR8Mmp&type=img');
+        url('https://nsapi.qyliu.top/api/bing');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
