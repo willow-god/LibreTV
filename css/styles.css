@@ -103,10 +103,12 @@ button, .card-hover {
 .settings-panel {
     scrollbar-width: thin;
     scrollbar-color: #444 #222;
-    transform: translateX(100%);
+    transform: translateX(-100%);
     transition: transform 0.3s ease;
     background: linear-gradient(135deg, var(--page-gradient-end), var(--page-gradient-start));
     border-left: 1px solid var(--primary-color);
+    width: 500px;
+    max-width: 95% !important;
 }
 
 .settings-panel.show {
@@ -610,24 +612,61 @@ body {
     margin-right: 0.35rem;
 }
 
-/* 历史记录面板样式 */
+/* 默认隐藏状态 */
 .history-panel {
-    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease-in-out;
-    overflow-y: scroll; /* 始终显示滚动条，防止宽度变化 */
-    overflow-x: hidden; /* 防止水平滚动 */
-    width: 320px; /* 固定宽度 */
-    box-sizing: border-box; /* 确保padding不影响总宽度 */
-    scrollbar-gutter: stable; /* 现代浏览器：为滚动条预留空间 */
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
 }
 
+/* 显示时添加 .show 类激活 */
 .history-panel.show {
-    transform: translateX(0);
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
 }
 
-#historyList {
-    padding-right: 6px; /* 为滚动条预留空间，确保内容不被挤压 */
+/* 遮罩背景样式 */
+.mask {
+  z-index: 0;
 }
+
+/* 宽度更大的模态框内容 */
+.modal-content {
+  display: flex;
+    flex-direction: column;
+  max-width: 860px; /* 初始大一些 */
+  width: 95% !important;
+  height: 75% !important;
+}
+
+/* 网格布局用于响应式展示记录 */
+#historyList {
+  display: grid;
+  overflow-y: auto;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  padding-right: 6px;
+}
+
+@media (min-width: 640px) {
+  #historyList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  #historyList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  #historyList {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 
 /* 历史记录项样式优化 */
 .history-item {
@@ -640,6 +679,7 @@ body {
     position: relative;
     margin-bottom: 8px; /* 减小底部间距 */
     width: 100%; /* 确保宽度一致 */
+    height: 140px;
 }
 
 .history-item:hover {

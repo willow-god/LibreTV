@@ -8,7 +8,7 @@ const MAX_HISTORY_ITEMS = 15;
 // 网站信息配置
 const SITE_CONFIG = {
     name: 'LiuShen TV',
-    url: 'https://tv.qyliu.top',
+    url: 'https://tv.liu2003.eu.org/',
     description: '免费在线视频搜索与观看平台',
     logo: 'https://images.icon-icons.com/38/PNG/512/retrotv_5520.png',
     version: '1.0.0'
