@@ -614,9 +614,9 @@ body {
 
 /* 默认隐藏状态 */
 .history-panel {
-  transform: scale(0) !important; /* 初始缩放为0 */
-  opacity: 0 !important;
-  pointer-events: none !important; /* 禁止点击 */
+  transform: scale(0); /* 初始缩放为0 */
+  opacity: 0;
+  pointer-events: none; /* 禁止点击 */
 }
 
 /* 显示时添加 .show 类激活 */
